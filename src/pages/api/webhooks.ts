@@ -22,7 +22,6 @@ export const config = {
 
 const relevantEvents = new Set([
   "checkout.session.completed",
-  "customer.subscription.created",
   "customer.subscription.updated",
   "customer.subscription.deleted",
 ]);
@@ -53,15 +52,13 @@ export default async function stripeWebhooks(
     if (relevantEvents.has(type)) {
       try {
         switch (type) {
-          case "customer.subscription.created":
           case "customer.subscription.updated":
           case "customer.subscription.deleted":
             const subscription = event.data.object as Stripe.Subscription;
 
             await saveSubscription(
               subscription.id,
-              subscription.customer.toString(),
-              type === "customer.subscription.created"
+              subscription.customer.toString()
             );
 
             break;
