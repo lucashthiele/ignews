@@ -1,7 +1,17 @@
 {
   "name": "ignews",
   "version": "0.1.0",
-  "private": true,
+  "description": "Blog where users can subscribe to read news about the React world",
+  "author": "Lucas Henrique Thiele",
+  "license": "MIT",
+  "homepage": "https://ignews-liard-mu.vercel.app/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucashthiele/ignews.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lucashthiele/ignews/issues"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
